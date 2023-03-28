@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Storage;
 
 class ClearGlideCache extends Command
 {
-    public $signature = 'laravel-glide:clear-cache';
+    public $signature = 'glide:clear-cache';
 
     public $description = 'Clears the Laravel Glide image cache';
 
