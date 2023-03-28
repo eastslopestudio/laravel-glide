@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "ikappas.composer",
+    "esbenp.prettier-vscode",
+    "amiralizadeh9480.laravel-extra-intellisense",
+    "m1guelpf.better-pest",
+    "msamgan.laravel-pint-vscode"
+  ]
+}

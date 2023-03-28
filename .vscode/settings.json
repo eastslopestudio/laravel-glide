@@ -1,0 +1,4 @@
+{
+  "editor.formatOnSave": true,
+  "editor.laravel.pint.enabled": true
+}
