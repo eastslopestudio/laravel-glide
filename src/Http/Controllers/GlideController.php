@@ -29,12 +29,14 @@ final class GlideController extends Controller
             ]);
 
             return $server->getImageResponse($path, $request->all());
-        } catch (SignatureException) {
-            abort(403);
-        } catch (FileNotFoundException) {
-            abort(404);
-        } catch (NotReadableException) {
-            abort(422);
+        } catch (SignatureException $e) {
+            abort(403, $e->getMessage());
+        } catch (FileNotFoundException $e) {
+            abort(404, $e->getMessage());
+        } catch (NotReadableException $e) {
+            abort(422, $e->getMessage());
+        } catch (\Exception $e) {
+            abort($e->getCode(), $e->getMessage());
         }
     }
 }
