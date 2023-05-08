@@ -1,19 +1,19 @@
 <?php
 
-namespace Eastslopestudio\Glide;
+namespace Eastslopestudio\Glissade;
 
-use Eastslopestudio\Glide\Commands\ClearGlideCache;
+use Eastslopestudio\Glissade\Commands\ClearGlissadeCache;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class GlideServiceProvider extends PackageServiceProvider
+class GlissadeServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('laravel-glide')
+            ->name('laravel-glissade')
             ->hasConfigFile()
-            ->hasCommand(ClearGlideCache::class)
+            ->hasCommand(ClearGlissadeCache::class)
             ->hasRoute('web');
     }
 }

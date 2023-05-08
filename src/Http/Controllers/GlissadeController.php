@@ -1,6 +1,6 @@
 <?php
 
-namespace Eastslopestudio\Glide\Http\Controllers;
+namespace Eastslopestudio\Glissade\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -13,19 +13,19 @@ use League\Glide\Signatures\SignatureException;
 use League\Glide\Signatures\SignatureFactory;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
-final class GlideController extends Controller
+final class GlissadeController extends Controller
 {
     public function __invoke(Request $request, string $path): StreamedResponse
     {
         try {
-            SignatureFactory::create((string) env('APP_KEY'))->validateRequest(config('glide.base_url').'/'.$path, $request->all());
+            SignatureFactory::create((string) env('APP_KEY'))->validateRequest(config('glissade.base_url').'/'.$path, $request->all());
             $server = ServerFactory::create([
                 'response' => new LaravelResponseFactory($request),
-                'source' => Storage::disk(config('glide.disks.source'))->getDriver(),
-                'cache' => Storage::disk(config('glide.disks.cache'))->getDriver(),
-                'cache_path_prefix' => config('glide.cache_path_prefix'),
-                'base_url' => config('glide.base_url'),
-                'max_image_size' => config('glide.max_image_size'),
+                'source' => Storage::disk(config('glissade.disks.source'))->getDriver(),
+                'cache' => Storage::disk(config('glissade.disks.cache'))->getDriver(),
+                'cache_path_prefix' => config('glissade.cache_path_prefix'),
+                'base_url' => config('glissade.base_url'),
+                'max_image_size' => config('glissade.max_image_size'),
             ]);
 
             return $server->getImageResponse($path, $request->all());

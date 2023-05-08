@@ -1,5 +1,5 @@
 <?php
 
-use Eastslopestudio\Glide\Tests\TestCase;
+use Eastslopestudio\Glissade\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);

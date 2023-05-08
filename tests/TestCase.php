@@ -1,9 +1,9 @@
 <?php
 
-namespace Eastslopestudio\Glide\Tests;
+namespace Eastslopestudio\Glissade\Tests;
 
-use Eastslopestudio\Glide\Facades\Glide;
-use Eastslopestudio\Glide\GlideServiceProvider;
+use Eastslopestudio\Glissade\Facades\Glissade;
+use Eastslopestudio\Glissade\GlissadeServiceProvider;
 use Orchestra\Testbench\TestCase as BaseTestCase;
 
 class TestCase extends BaseTestCase
@@ -21,7 +21,7 @@ class TestCase extends BaseTestCase
             'throw' => false,
         ]);
 
-        $app['config']->set('glide.disks.source', 'source');
+        $app['config']->set('glissade.disks.source', 'source');
 
         $app['config']->set('filesystems.disks.cache', [
             'driver' => 'local',
@@ -29,18 +29,18 @@ class TestCase extends BaseTestCase
             'throw' => false,
         ]);
 
-        $app['config']->set('glide.disks.cache', 'cache');
+        $app['config']->set('glissade.disks.cache', 'cache');
     }
 
     protected function getPackageProviders($app): array
     {
-        return [GlideServiceProvider::class];
+        return [GlissadeServiceProvider::class];
     }
 
     protected function getPackageAliases($app): array
     {
         return [
-            'Glide' => Glide::class,
+            'Glissade' => Glissade::class,
         ];
     }
 }

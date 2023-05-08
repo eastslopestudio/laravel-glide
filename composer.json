@@ -1,6 +1,6 @@
 {
-  "name": "eastslopestudio/laravel-glide",
-  "description": "Dynamic image handling with Glide for Laravel.",
+  "name": "eastslopestudio/laravel-glissade",
+  "description": "Dynamic image handling with for Laravel powered by Glide.",
   "license": "MIT",
   "authors": [
     {
@@ -31,12 +31,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Eastslopestudio\\Glide\\": "src"
+      "Eastslopestudio\\Glissade\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Eastslopestudio\\Glide\\Tests\\": "tests/"
+      "Eastslopestudio\\Glissade\\Tests\\": "tests/"
     }
   },
   "scripts": {
@@ -59,10 +59,10 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Eastslopestudio\\Glide\\GlideServiceProvider"
+        "Eastslopestudio\\Glissade\\GlissadeServiceProvider"
       ],
       "aliases": {
-        "Glide": "Eastslopestudio\\Glide\\Facades\\Glide"
+        "Glissade": "Eastslopestudio\\Glissade\\Facades\\Glissade"
       }
     }
   },

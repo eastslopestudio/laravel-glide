@@ -1,3 +1,3 @@
-# Laravel Glide
+# Laravel Glissade
 
-Dynamic image handling with Glide for Laravel.
+Dynamic image handling with for Laravel powered by Glide.
